@@ -42,20 +42,15 @@ function Quiz() {
   for(var i = 0; i<3;i++) {
     (function() {
       var n1 = Math.randomInt(9)+1;
-      debug("n1 = "+n1);
       var n2 = Math.randomInt(9)+1;
-      debug("n2 = "+n2);
       self.q.push(
         { pregunta: '¿ '+n1+'x'+n2+"= ?",
           respuesta: function(x) {
-            debug("n1 = "+n1);
-            debug("n2 = "+n2);
             return (x == n1*n2);
         }
       })
     })();
   }
-  debug(this.q);
 }
 
 Quiz.prototype = new AbstractQuiz();
